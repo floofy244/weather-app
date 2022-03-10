@@ -1,0 +1,93 @@
+body{
+   font-family: Arial, Helvetica, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
+   background: #f2f2f2;
+   background-size: cover no-repeat;
+   font-size: 120%;
+   transition: all 1s ease-in-out;
+}
+
+.card{
+   background: #2c2c2c;
+   color: whitesmoke;
+   padding: 2em;
+   border-radius: 1em;
+   box-shadow: 0 0.25em 0.5em rgba(0,0,0,0.25);
+   width: 100%;
+   max-width: 420px;
+   margin: 1em;
+}
+
+.search{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 1em;
+}
+
+button{
+   background: whitesmoke;
+   color: #2c2c2c;
+   border: none;
+   font-size: 100%;
+   padding: 0.7em;
+   border-radius: 1em;
+   box-shadow: 0 0.25em 0.5em rgba(0,0,0,0.25);
+   outline: none;
+}
+
+button:hover{
+   background: white;
+   color: #2c2c2c;
+   border: none;
+   padding: 0.7em;
+   border-radius: 1em;
+   box-shadow: 0 0.25em 0.5em rgba(0,0,0,0.25);
+   outline: none;
+   cursor: pointer;
+   transition: 0.2s ease-in-out;
+}
+
+.search-bar{
+   width: 100%;
+   max-width: 420px;
+   background-color: whitesmoke;
+   color: #2c2c2c;
+   font-size: 100%;
+   padding: 0.8em 1em;
+   border-radius: 18px;
+   margin: 1em;
+   border: none;
+   outline: none;
+}
+
+h1.temp{
+   margin: 0;
+}
+
+.description{
+   text-transform: capitalize;
+}
+
+.flex{
+   display: flex;
+   align-items: center;
+}
+
+.weather.fetching{
+   visibility: hidden;
+   max-height: 20px;
+   position: relative;
+}
+
+.weather.fetching::after{
+   visibility: visible;
+   content: "Loading....";
+   position: absolute;
+   top: 0;
+   left: 20px;
+}
