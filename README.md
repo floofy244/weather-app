@@ -1,5 +1,5 @@
-# MRM-Calc-JS
+# MRM-Weather-App
 
 Aviral Malik
 
-hosted link --> https://floofy244.github.io/MRM-Calc-JS/# weather-app
+hosted link --> https://floofy244.github.io/weather-app/
