@@ -39,21 +39,25 @@ document.querySelector('.search input').addEventListener('keypress', (e) => {
    }
 });
 
-document.querySelector('.fahrenheit').addEventListener('click', toggleFahrenheit);
+document.querySelector('.temp').addEventListener('click', toggleFahrenheit);
 
 function toggleFahrenheit() {
-   const temp = document.querySelector('.temp');
-   const fahrenheit = document.querySelector('.fahrenheit');
-   const celsius = document.querySelector('.celsius');
-   if(fahrenheit.classList.contains('active')) {
-      temp.innerText = (parseInt(temp.innerText) - 32) * 5 / 9 + "°C";
-      fahrenheit.classList.remove('active');
-      celsius.classList.add('active');
+   if(document.querySelector('.temp').innerText.includes("°C")) {
+      document.querySelector('.temp').innerText = document.querySelector('.temp').innerText.replace("°C", "°F");
+      const temp = document.querySelector('.temp');
+      const tempValue = temp.innerText;
+      const tempValueNum = parseInt(tempValue.slice(0, -1));
+      const tempValueFahrenheit = Math.round(tempValueNum * 9/5 + 32);
+      temp.innerText = tempValueFahrenheit + "°F";
    } else {
-      temp.innerText = (parseInt(temp.innerText) * 9 / 5) + 32 + "°F";
-      fahrenheit.classList.add('active');
-      celsius.classList.remove('active');
+      document.querySelector('.temp').innerText = document.querySelector('.temp').innerText.replace("°F", "°C");
+      const temp = document.querySelector('.temp');
+      const tempValue = temp.innerText;
+      const tempValueNum = parseInt(tempValue.slice(0, -1));
+      const tempValueCelsius = Math.round((tempValueNum - 32) * 5/9);
+      temp.innerText = tempValueCelsius + "°C";
    }
 }
+
 
 weather.fetchWeather("Delhi");
